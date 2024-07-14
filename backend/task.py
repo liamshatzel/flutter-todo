@@ -4,4 +4,4 @@ def add_task(title, body, db):
     db.commit()
 
 def get_tasks(db):
-    return db.execute('SELECT * FROM tasks').fetchall()
+    return db.execute('SELECT * FROM task').fetchall()

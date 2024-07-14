@@ -24,10 +24,10 @@ def create_app(test_config=None):
 
     @app.get("/test")
     def test():
-        import tables
+        from .task import get_tasks
         from .db import get_db
         db = get_db()
-        return tables.get_tasks(db)
+        return get_tasks(db)
 
     from . import db
     db.init_app(app)
