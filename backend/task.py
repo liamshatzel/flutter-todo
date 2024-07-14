@@ -6,4 +6,6 @@ def add_task(title, body, db):
 
 def get_tasks(db):
     rows_list = [dict(row) for row in db.execute('SELECT * FROM task').fetchall()]
+    for row in db.execute('SELECT * FROM task').fetchall(): print (row)
+    for row in rows_list: print(row)
     return jsonify(rows_list)
