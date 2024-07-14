@@ -24,9 +24,12 @@ def create_app(test_config=None):
 
     @app.get("/test")
     def test():
-        from .task import get_tasks
+        from .task import get_tasks, add_task
         from .db import get_db
         db = get_db()
+        add_task("test", 'dodo', db)
+        add_task("test2", 'liam', db)
+        add_task("test3", 'payton', db)
         return get_tasks(db)
 
     from . import db
