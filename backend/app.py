@@ -27,7 +27,7 @@ def create_app(test_config=None):
         import tables
         from .db import get_db
         db = get_db()
-        return get_tasks(db)
+        return tables.get_tasks(db)
 
     from . import db
     db.init_app(app)
